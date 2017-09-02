@@ -1,3 +1,5 @@
+![alt text](https://raw.githubusercontent.com/davidmather/electronCodeEditor/master/readmeImages/electronCodeEditor.PNG)
+
 # electronCodeEditor
 
 A code editor I wrote while learning electron.To build you must first have node package manager https://www.npmjs.com/ and download the files into a folder then run npm install from that folder
