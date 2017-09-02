@@ -1,0 +1,64 @@
+.CodeMirror {
+    height: 100%;
+    overflow-y: scroll;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.lint-error {
+    font-family: arial;
+    font-size: 70%;
+    background: #ffa;
+    color: #a00;
+    padding: 2px 5px 3px;
+}
+
+.lint-error-icon {
+    color: white;
+    background-color: red;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 0 3px;
+    margin-right: 7px;
+}
+
+.CodeMirror-lint-tooltip {
+    position: fixed;
+    top: auto;
+    top: auto !important;
+    bottom: 10px;
+    background: orange;
+    max-height: 20px;
+    left: auto !important;
+    right: 10px !important;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.CodeMirror-dialog-top {
+    position: fixed;
+    top: auto;
+    bottom: 0px;
+    width: 220px;
+    left: 200px;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    background: white;
+    color: black;
+}
+
+.cm-trailingspace {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAYAAAB/qH1jAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QUXCToH00Y1UgAAACFJREFUCNdjPMDBUc/AwNDAAAFMTAwMDA0OP34wQgX/AQBYgwYEx4f9lQAAAABJRU5ErkJggg==);
+    background-position: bottom left;
+    background-repeat: repeat-x;
+}
+
+.CodeMirror-focused .cm-matchhighlight {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAFklEQVQI12NgYGBgkKzc8x9CMDAwAAAmhwSbidEoSQAAAABJRU5ErkJggg==);
+    background-position: bottom;
+    background-repeat: repeat-x;
+}
+
+.CodeMirror-selection-highlight-scrollbar {
+    background-color: green
+}

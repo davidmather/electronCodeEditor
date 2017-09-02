@@ -1,0 +1,116 @@
+body{margin: 0px;}
+#sidebar,#content{width: 200px;position: fixed;top:40px;left: 0px;bottom: 0px; overflow-y: hidden;z-index: -1;}
+#content{width: 100%; left:200px;}
+#sidebar{background: #0C1021; color: #F8F8F8; overflow-y: scroll;}
+#sidebar li{padding-left: 10px;}
+ul {padding: 0px;margin: 0px;cursor: pointer;}
+li {list-style-type: none;margin:0;padding: 0;}
+#sidebar ul li:hover{background: black;}
+#sidebar::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+    background: #000;
+}
+
+#sidebar::-webkit-scrollbar-thumb {
+    background: #393812;
+    -webkit-border-radius: 1ex;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+#sidebar::-webkit-scrollbar-corner {
+    background: #000;
+}
+
+#size_controls, #title {
+	position: fixed;
+}
+
+#size_controls {
+	right: 0px;
+	cursor: pointer;
+}
+
+#menu, #currentFileName{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 40px;
+	-webkit-user-select: none;
+  	-webkit-app-region: drag;
+}
+
+#currentFileName {
+	text-align: center;
+}
+
+#title_image {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 20px;
+	height: 20px;
+}
+
+#title {
+	left: 30px;
+	cursor: default;
+
+}
+
+#size_controls button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	-webkit-app-region: no-drag;
+}
+
+#size_controls button:hover {
+	background: red;
+}
+
+#main_menu {
+	position: fixed;
+	top: 22px;
+	background:#e6e3dc;
+    right:0px;
+    left:0px;
+}
+
+.main_menu_button {
+	background: none;
+	border: none;
+	-webkit-app-region: no-drag;
+	cursor: pointer;
+}
+
+#main_menu button:hover {
+	background: #f7f6f2;
+}
+
+
+.control_menu {
+	position: fixed;
+	top: 40px;
+	background: white;
+	z-index: 9999;
+
+}
+
+.control_menu button {
+	width:280px;
+	text-align: left;
+	border: none;
+	background: none;
+	cursor: pointer;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.control_hint {
+	text-align:right;
+	width: 100%;
+	display:block;
+	margin-top: -15px;
+}
