@@ -1,6 +1,7 @@
 body{margin: 0px;}
-#sidebar,#content{width: 200px;position: fixed;top:40px;left: 0px;bottom: 0px; overflow-y: hidden;z-index: -1;}
-#content{width: 100%; left:200px;}
+#sidebar,#content, #imageEditor{width: 200px;position: fixed;top:40px;left: 0px;bottom: 0px; overflow-y: hidden;z-index: -1;}
+#content,#imageEditor{width: 100%; left:200px;}
+#imageEditor{display: none;}
 #sidebar{background: #0C1021; color: #F8F8F8; overflow-y: scroll;}
 #sidebar li{padding-left: 10px;}
 ul {padding: 0px;margin: 0px;cursor: pointer;}
