@@ -1,5 +1,10 @@
 var sidebarWidth = 185;
 
+document.getElementById("launch_file_in_electron").addEventListener("click", function (e) {
+    const htmlViewer = new BrowserWindow({ width: 800, height: 600 });
+   htmlViewer.loadURL(currentfile.replace("C:", "http://localhost:8888"));
+});
+
 document.getElementById("launch_file_in_chrome").addEventListener("click", function (e) {
     exec('start chrome '+currentfile.replace("C:", "http://localhost:8888"));
 });
@@ -122,9 +127,6 @@ document.getElementById("open_dev_tools").addEventListener("click", function(e) 
 window.addEventListener("resize", function() {
     document.getElementById("content").setAttribute("style", "width:" + (window.innerWidth - sidebarWidth) + "px");
     document.getElementById("imageEditor").setAttribute("style", "width:" + (window.innerWidth - sidebarWidth) + "px");
-    if(document.getElementById("imageEditor").style.display != "none"){
-         document.getElementById("content").style.display = "none";
-    }
 }, false);
 
 document.getElementById("selectAll").addEventListener("click", function(e){
