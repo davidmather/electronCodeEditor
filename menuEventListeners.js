@@ -121,6 +121,10 @@ document.getElementById("open_dev_tools").addEventListener("click", function(e) 
 
 window.addEventListener("resize", function() {
     document.getElementById("content").setAttribute("style", "width:" + (window.innerWidth - sidebarWidth) + "px");
+    document.getElementById("imageEditor").setAttribute("style", "width:" + (window.innerWidth - sidebarWidth) + "px");
+    if(document.getElementById("imageEditor").style.display != "none"){
+         document.getElementById("content").style.display = "none";
+    }
 }, false);
 
 document.getElementById("selectAll").addEventListener("click", function(e){

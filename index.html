@@ -47,9 +47,9 @@
         require("codemirror/addon/display/fullscreen.js");
     </script>
     <script src="node_modules/jshint/dist/jshint.js"></script>
+    <script src="node_modules/jsonlint/web/jsonlint.js"></script>;
+    <script src="node_modules/csslint/dist/csslint.js"></script>
     <script>
-        require("jsonlint");
-        require("csslint");
         require("codemirror/addon/lint/lint.js");
         require("codemirror/addon/lint/javascript-lint.js");
         require("codemirror/addon/lint/json-lint.js");
@@ -75,7 +75,9 @@
         require("tern/lib/infer.js");
         require("tern/plugin/doc_comment.js");
         require("codemirror/addon/edit/trailingspace.js");
-		var display_state;
+    </script>
+    <script>    
+    	var display_state;
 		var display_element;
 		const buttonArray = ["file_menu","edit_menu","find_menu","view_menu","navigate_menu","debug_menu","help_menu"];
 		function toggleDisplay(id){
@@ -202,7 +204,11 @@
 		</ul>
 	</div>
 	<div id="content"></div>
-    <div id="imageEditor"></div>
+    <div id="imageEditor">
+        <input class="color" value="#B6BD79" >
+
+        <canvas id="canvas"></canvas>
+    </div>
 </body>
 <script>
     const remote = require('electron').remote;
@@ -311,10 +317,18 @@
 					CodeMirror.modeURL = "node_modules/codemirror/mode/%N/%N.js";
                     
                     var mimeType = mime.lookup(directory + filePath);
-                    if(mimeType = "image/png"){
+                    if(mimeType == "image/png"){
                         document.getElementById("content").style.display = "none";
                         document.getElementById("imageEditor").style.display = "block";
-                         document.getElementById("imageEditor").innerHTML = "<img src='"+directory+filePath+"' alt='none' />";
+                        var img = new Image();
+                        img.onload = function() {
+                            var canvas = document.getElementById("canvas");
+                            var context = canvas.getContext("2d");
+                            canvas.width = this.width;
+                            canvas.height = this.height;
+                            context.drawImage(this,0,0);
+                        }
+                        img.src = directory+filePath;
                     }
 					else if (fs.lstatSync(directory + filePath).isDirectory()) {
 						directory = directory + filePath + "/";
@@ -407,5 +421,20 @@
 	document.getElementById("content").setAttribute("style", "width:" + (window.innerWidth - 185) + "px");
 </script>
 <script src="menuEventListeners.js"></script>
+            <script src="colorPicker-master/colors.js"></script>
+        <script src="colorPicker-master/colorPicker.data.js"></script>
+        <script src="colorPicker-master/colorPicker.js"></script>
+        <script src="colorPicker-master/javascript_implementation/jsColor.js"></script>
+            <script>
+ var colors = jsColorPicker('input.color', {
+        customBG: '#222',
+        readOnly: true,
+        // patch: false,
+        init: function(elm, colors) { // colors is a different instance (not connected to colorPicker)
+          elm.style.backgroundColor = elm.value;
+          elm.style.color = colors.rgbaMixCustom.luminance > 0.22 ? '#222' : '#ddd';
+        }
+      });
+        </script>
 <link rel="stylesheet" href="styles/codeEditor.css" />
 </html>
