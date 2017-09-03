@@ -1,3 +1,5 @@
+
+
 ![alt text](https://raw.githubusercontent.com/davidmather/electronCodeEditor/master/readmeImages/electronCodeEditor.PNG)
 
 # electronCodeEditor
@@ -8,3 +10,9 @@ I am using mmmagic for image editing. This is not built for the latest electron 
 https://electron.atom.io/docs/tutorial/using-native-node-modules/
 
 Now you should be able to run the code editor with npm start
+
+# Features
+
+-Preview code in Chrome, Edge or Firefox with a nodejs webserver
+
+-Many more on the way
