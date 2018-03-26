@@ -125,8 +125,12 @@ document.getElementById("open_dev_tools").addEventListener("click", function(e) 
 });
 
 window.addEventListener("resize", function() {
+    var contentDisplay = document.getElementById("content").style.display;
+    var imageDisplay = document.getElementById("imageEditor").style.display;
     document.getElementById("content").setAttribute("style", "width:" + (window.innerWidth - sidebarWidth) + "px");
     document.getElementById("imageEditor").setAttribute("style", "width:" + (window.innerWidth - sidebarWidth) + "px");
+    document.getElementById("content").style.display = contentDisplay;
+    document.getElementById("imageEditor").style.display = imageDisplay;
 }, false);
 
 document.getElementById("selectAll").addEventListener("click", function(e){

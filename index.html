@@ -111,7 +111,7 @@
 		<button class="main_menu_button" onclick="toggleDisplay('edit_menu')" id="Edit">Edit</button>
 		<div style="display: none;left: 35px;" id="edit_menu" class="control_menu" >
 			<ul id="edit_menu_list" class="control_menu_list">
-				<li><button id="undo">Undo<span class="control_hint">Ctrl+Z</span></button></li>
+				<li><button id="undo" onclick="myCodeMirror.undo()">Undo<span class="control_hint">Ctrl+Z</span></button></li>
 				<li><button id="redo">Redo<span class="control_hint">Ctrl+Y</span></button></li>
 				<li><button id="cut">Cut<span class="control_hint">Ctrl+X</span></button></li>
 				<li><button id="copy">Copy<span class="control_hint">Ctrl+C</span></button></li>
@@ -202,13 +202,13 @@
     <div class="contained start-hidden" id="embed"></div>
 </body>
 <script>
-    const remote = require('electron').remote;
-    const {dialog} = require('electron').remote;
-    const {clipboard} = require('electron');
-    const mime = require('mime');
-    const { BrowserWindow } = require('electron').remote
-    const PDFWindow = require('electron-pdf-window');
-	const fs = require("fs");
+    const remote = window.require('electron').remote;
+    const {dialog} = window.require('electron').remote;
+    const {clipboard} = window.require('electron');
+    const mime = window.require('mime');
+    const { BrowserWindow } = window.require('electron').remote
+    const PDFWindow = window.require('electron-pdf-window');
+	const fs = window.require("fs");
     
     var currentfile;
 	var myCodeMirror = CodeMirror(document.getElementById("content"), {
