@@ -23,7 +23,7 @@
     "color-picker": "0.0.1",
     "connect": "^3.6.3",
     "csslint": "^1.0.5",
-    "electron": "^1.8.4",
+    "electron": "^7.2.4",
     "electron-pdf-window": "^1.0.12",
     "electron-rebuild": "^1.7.3",
     "jscolor": "^0.3.0",
